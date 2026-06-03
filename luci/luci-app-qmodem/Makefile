@@ -49,16 +49,6 @@ choice
   bool "Generic QMI driver"
 endchoice
 
-choice 
-	prompt "MHI PCIe Modem Driver Selection"
-	depends on PACKAGE_luci-app-qmodem_INCLUDE_ADD_PCI_SUPPORT
-	
-	config PACKAGE_luci-app-qmodem_VENDOR_MHI_PCIe_DRIVER
-	bool "Use Vendor MHI PCIe Driver"
-
-	config  PACKAGE_luci-app-qmodem_GENERIC_MHI_PCIe_DRIVER
-	bool "Use Generic MHI PCIe Driver"
-endchoice
 
 choice
   prompt "Quectel Connect Manager Selection"
@@ -67,19 +57,12 @@ choice
 	config PACKAGE_luci-app-qmodem_USE_TOM_CUSTOMIZED_QUECTEL_CM
 	bool "Tom customized Quectel CM"
 
-	config PACKAGE_luci-app-qmodem_USING_QWRT_QUECTEL_CM_5G
-	bool "QWRT Quectel-CM-5G"
-
 	config PACKAGE_luci-app-qmodem_USING_NORMAL_QUECTEL_CM
 	bool "NORMAL Quectel-CM"
 endchoice
 
 	config PACKAGE_luci-app-qmodem_INCLUDE_ADD_PCI_SUPPORT
 		bool "Add PCIe Modem SUPPORT"
-		default n
-
-	config PACKAGE_luci-app-qmodem_INCLUDE_ADD_MTK_T7XX_SUPPORT
-		bool "Add MTK-T7XX Modem PCI SUPPORT"
 		default n
 
 	config PACKAGE_luci-app-qmodem_INCLUDE_ADD_QFIREHOSE_SUPPORT
